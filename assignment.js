@@ -6,12 +6,12 @@ function calculateTax(income, expenses) {
     if (income < 0 || expenses < 0 || income <= expenses) {
         return "Invalid Input";
     }
-    let manthlyincome  = income - expenses
-    let tax = manthlyincome  * 20 / 100;
+    let manthlyincome = income - expenses
+    let tax = manthlyincome * 20 / 100;
     return tax;
 }
-let man = calculateTax(10000, 3000);
-console.log(man);
+let manu = calculateTax(10000, 3000);
+console.log(manu);
 
 
 
@@ -29,8 +29,8 @@ function sendNotification(email) {
     return notification;
 }
 
-// let finall = sendNotification("zihad.ph@gmail.com");
-// console.log(finall);
+let finall = sendNotification("zihad.ph@gmail.com");
+console.log(finall);
 
 
 // task 3 start//
@@ -52,8 +52,8 @@ function checkDigitsInName(name) {
 
 }
 
-// let funal = checkDigitsInName("Raj123")
-// console.log(funal);
+let funal = checkDigitsInName("Raj123")
+console.log(funal);
 
 
 
@@ -71,22 +71,48 @@ function calculateFinalScore(obj) {
         return "Invalid Input";
     }
 
-    else if (obj.testScore > 50 || obj.schoolGrade > 30) {
-        return "Invalid Input"
-    }
 
     if (obj.testScore >= 0 || obj.schoolGrade >= 0 || obj.isFFamily === true) {
         let finalscore = obj.testScore + obj.schoolGrade + 20;
-        // if (finalscore >= 80) {
-        //     return true;
-        // }
-        // else {
-        //     return false;
-        // }
+        if (finalscore >= 80) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
 }
 
-// let final = calculateFinalScore({ name: "Rajib", testScore: 45, schoolGrade: 25, isFFamily: true });
-// // let final = calculateFinalScore(5646);
-// console.log(final);
+let final = calculateFinalScore({ name: "Rajib", testScore: 45, schoolGrade: 25, isFFamily: true });
+// let final = calculateFinalScore(5646);
+console.log(final);
+
+
+// task 5 start//
+
+// node assignment.js
+
+function waitingTime(waitingTimes, serialNumber) {
+
+    if (!Array.isArray(waitingTimes) || typeof serialNumber !== "number") {
+        return ("Invalid Input");
+    }
+
+    let sum = 0;
+    for (let i = 0; i < waitingTimes.length; i++) {
+        sum = sum + waitingTimes[i];
+    }
+    
+    let average = Math.round(sum / waitingTimes.length);
+    let sirial = serialNumber - 1;
+    let mysirial = sirial - waitingTimes.length;
+    let sirialtime = average * mysirial
+    console.log(sirialtime);
+}
+
+let man = waitingTime([ 3, 5, 7, 11, 6 ], 10)
+
+console.log(man);
+
+
